@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400&display=swap');
+body {
+    font-family: 'Roboto', 'Helvetica', 'Nimbus Sans L', sans-serif;
+    background-color: #FFF;
+}
+
+.navbar {
+    color: #FFF;
+    background-color: #160D47;
+    border-radius: 0px;
+    height: 40px;
+    margin-bottom: 0px;
+    min-height: auto;
+}
+
+.navbar a {
+    color: #FFF;
+    font-size: 12px;
+}
+
+.navbar-nav>li>a {
+    padding-top: 8px;
+    padding-bottom: 10px;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+    color: #FFF;
+    background-color: #0F1031;
+}
+
+#search {
+    background-color: #504975;
+    border-radius: 10px;
+    height: 22px;
+    margin: 0px auto;
+    border-color: #504975;
+}
+
+.fa-stack {
+    vertical-align: text-bottom;
+}
+
+.navbar-right a {
+    text-decoration: none;
+}
+
+#top-menu {
+    background-color: #FFF;
+    height: 75px;
+}
+
+#top-menu .navbar-nav a {
+    text-transform: uppercase;
+    color: #160D47;
+    font-size: 14px;
+    padding: 28px 20px 27px 20px;
+}
+
+#top-menu .navbar-nav li:nth-child(even) {
+    padding-top: 28px !important;
+}
+
+#top-menu a:hover, #top-menu a:focus, .top-link-selected {
+    color: #FFF !important;
+    background-color: #EF4A62;
+    height: 85px;
+}
+
+#menu-desktop {
+    display: inline-block;
+}
+
+#main {
+    background-image: url("/images/home2.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+footer .container-fluid {
+    background: #160f49;
+    background: -moz-linear-gradient(left, #160f49 0%, #02a7d7 100%);
+    background: -webkit-linear-gradient(left, #160f49 0%, #02a7d7 100%);
+    background: linear-gradient(to right, #160f49 0%, #02a7d7 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#160f49', endColorstr='#02a7d7', GradientType=1);
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 300;
+    color: #FFF;
+    padding: 40px 0px;
+    line-height: 2.0;
+}
+
+footer .container-fluid a {
+    color: #FFF;
+}
+
+footer .container-fluid span {
+    font-weight: 500;
+}
+
+#newsletter {
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+}
+
+#newsletter>div {
+    width: 100%;
+}
+
+#newsletter input {
+    border-radius: 20px;
+    width: 80%;
+    border: none;
+    padding: 5px 15px;
+}
+
+#newsletter input::placeholder {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 13px;
+    text-align: right;
+}
+
+.navbar-right img {
+    vertical-align: baseline;
+    margin: 0px 2px;
+}
+
+#trip-advisor {
+    margin-top: -41px;
+}
+
+#chat {
+    position: fixed;
+    float: right;
+    right: 0;
+    bottom: 10%;
+    z-index: 100;
+}
+
+#div-pre-logo {
+    background-image: url("/images/blanco.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+#div-logo {
+    display: flex;
+    align-items: flex-end;
+}
+
+#next {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+#next .row .col-md-12:nth-child(2),
+.rem1 {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+#next .row .col-md-12:nth-child(3) a,
+.rem2 {
+    font-size: 18px;
+    font-weight: 300;
+    color: #160D47;
+}
+
+@media(max-width:1367px) {
+    #chat {
+        bottom: 25%;
+    }
+}
