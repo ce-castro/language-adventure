@@ -18,7 +18,7 @@ class AdminController extends Controller {
     }
 
     public function index() {
-        return view('admin.layouts.master');
+        return redirect(route('schools.index'));
     }
 
 }

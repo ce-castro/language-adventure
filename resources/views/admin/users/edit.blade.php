@@ -36,6 +36,8 @@
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}
                     <div class="box-body">
+
+                        @if (Auth::user()->role_id == 1)
                         <div class="form-group @if ($errors->has('role_id')) has-error @endif">
                             <label for="role_id" class="col-sm-2 control-label">Role</label>
                             <div class="col-sm-10">
@@ -50,6 +52,7 @@
                                 @endif
                             </div>
                         </div>
+                        @endif
 
                         <div class="form-group @if ($errors->has('name')) has-error @endif">
                             <label for="inputName" class="col-sm-2 control-label">Name</label>
@@ -88,6 +91,7 @@
                             </div>
                         </div>
 
+                        @if (Auth::user()->role_id == 1)
                         <div class="form-group @if ($errors->has('status')) has-error @endif col-sm-6">
                             <label for="inputActive" class="col-sm-4 control-label">Active</label>
                             <div class="col-sm-8">
@@ -99,13 +103,17 @@
                                 @endif
                             </div>
                         </div>
+                        @endif
 
                     </div>
 
                     <div class="box-footer">
                         <a href="{{ route('users.index') }}" class="btn btn-default btn-flat"><i class="fa fa-times-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Cancel</a>
                         <button type="submit" class="btn btn-primary pull-right btn-flat"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Update</button>
+                        @if (Auth::user()->role_id == 1)
                         <a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger pull-right btn-flat" onclick="return confirm('Delete {{ $user->name }}');"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;Delete</a>
+                        @endif
+
                     </div>
 
                 </form>

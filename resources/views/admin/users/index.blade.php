@@ -26,9 +26,11 @@
 
 @section('content')
     <div class="box">
+        @if (Auth::user()->role_id == 1)
         <div class="box-header">
             <a href="{{ route('users.create') }}" class="btn btn-success btn-flat pull-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add a User</a>
         </div>
+        @endif
 
         @include('admin.layouts.errors')
 
@@ -41,7 +43,9 @@
                     <th>Email</th>
                     <th>Rol</th>
                     <th>Edit</th>
+                    @if (Auth::user()->role_id == 1)
                     <th>Delete</th>
+                    @endif
                 </tr>
                 </thead>
 
@@ -52,7 +56,9 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->role->role }}</td>
                     <td><a href="{{ route('users.edit', $user->id) }}" title="Edit {{ $user->name }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                    @if (Auth::user()->role_id == 1)
                     <td><a href="{{ route('users.delete', $user->id) }}" title="Delete {{ $user->name }}" onclick="return confirm('Are you sure?');"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                    @endif
                 </tr>
                 @endforeach
             </table>

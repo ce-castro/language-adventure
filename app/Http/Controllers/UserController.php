@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Role;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class UserController extends AdminController
 {
     public function index(){
-        $users = User::orderBy('name', 'asc')->get();
+        if(Auth::user()->role_id ==1) {
+            $users = User::orderBy('name', 'asc')->get();
+        } else {
+            $users = User::where('id', '=', Auth::user()->id)->orderBy('name', 'asc')->get();
+        }
         return view('admin.users.index', compact('users'));
     }
 

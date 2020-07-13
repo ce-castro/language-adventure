@@ -32,8 +32,8 @@
 
         <!-- Logo -->
         <a href="{{ asset('/admin') }}" class="logo">
-            <span class="logo-mini"><b>CT</b></span>
-            <span class="logo-lg"><b>Catch A Tour</b></span>
+            <span class="logo-mini"><b>LA</b></span>
+            <span class="logo-lg"><b>School Portal</b></span>
         </a>
 
         <!-- Header Navbar -->
@@ -67,7 +67,7 @@
 
     <!-- Main Footer -->
     <footer class="main-footer">
-        <strong>Copyright &copy; {{ date('Y') }} <a href="https://catchatour.com">Catch A Tour</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; {{ date('Y') }} <a href="https://languagedventurers.com">Language Adventures</a>.</strong> All rights reserved.
     </footer>
 
 </div>
