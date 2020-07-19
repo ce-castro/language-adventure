@@ -63,7 +63,7 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a href="{{ route('schools.edit', $school->id) }}" title="Edit {{ $school->name }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a href="{{ route('schools.edit', [$school->id, 'tab_1']) }}" title="Edit {{ $school->name }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </td>
                             @if (Auth::user()->role_id == 1)
                             <td class="text-center">

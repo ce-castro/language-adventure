@@ -39,8 +39,7 @@
                         <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
                             <label for="name" class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" placeholder="Name" name="name"
-                                       onchange="convert()" value="{{ old('name') }}">
+                                <input type="text" class="form-control" id="name" placeholder="Name" name="name" onchange="convert()" value="{{ old('name') }}">
                                 @if ($errors->has('name'))
                                     <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
                                 @endif

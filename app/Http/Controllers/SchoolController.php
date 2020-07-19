@@ -49,6 +49,42 @@ class SchoolController extends AdminController
 //        return redirect(route('tours.edit', [$tour->id, 'tab_1'] ));
     }
 
+    public function edit(School $school){
+
+        $countries = Country::orderBy('name', 'asc')->get();
+        $users = User::where('role_id', '!=', 1)->orderBy('name', 'asc')->get();
+
+        return view('admin.schools.edit', compact('school','countries', 'users'));
+    }
+
+    public function update($id, Request $request){
+
+        $school = School::findOrFail($id);
+
+        $this->validate($request, [
+            'name' => 'required',
+            'city' => 'required',
+            'country_id' => 'required',
+            'user_id' => 'required'
+        ]);
+
+
+        $input = $request->except(['status']);
+
+        if($request->status == 1){
+            $input['status'] = 1;
+        } else {
+            $input['status'] = 0;
+        }
+
+        $school->update($input);
+
+        session()->flash('message_green', 'School successfully updated!');
+        return redirect(route('schools.index'));
+        //return redirect(route('tours.edit', [$id, 'tab_1'] ));
+
+    }
+
     public function destroy($id){
         $tour = School::findOrFail($id);
         $tour->delete();

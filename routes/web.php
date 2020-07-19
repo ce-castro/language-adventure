@@ -17,9 +17,10 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::get('/admin/school', 'SchoolController@index')->name('schools.index');
 Route::get('/admin/school/create', 'SchoolController@create')->name('schools.create');
-Route::get('/admin/school/{slider}/edit', 'SchoolController@edit')->name('schools.edit');
+Route::get('/admin/school/{school}/edit/{tab}', 'SchoolController@edit')->name('schools.edit');
 Route::post('/admin/school', 'SchoolController@store')->name('schools.store');
 Route::get('/admin/school/{slider}/delete', 'SchoolController@destroy')->name('schools.delete');
+Route::patch('/admin/school/{id}', 'SchoolController@update')->name('schools.update');
 
 //Route::get('/schools/categories', 'CategoryController@index')->name('categories.index');
 //Route::get('/schools/categories/create', 'CategoryController@create')->name('categories.create');

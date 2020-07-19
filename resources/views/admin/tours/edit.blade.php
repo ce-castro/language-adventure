@@ -106,8 +106,7 @@ function bytesToHuman($bytes) {
                                     <div class="form-group @if ($errors->has('category_id')) has-error @endif col-sm-6 required">
                                         <label for="category_id" class="col-sm-2 control-label">Category</label>
                                         <div class="col-sm-10">
-                                            <select name="category_id[]" id="category_id" class="form-control select2"
-                                                    multiple="multiple">
+                                            <select name="category_id[]" id="category_id" class="form-control select2"  multiple="multiple">
                                                 <option value="">Please select..</option>
                                                 @foreach($listcategories as $category)
                                                     <option value="{{ $category->id }}"
