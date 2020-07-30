@@ -57,18 +57,10 @@ function bytesToHuman($bytes) {
             <div class="box box-info">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li @if (Request::route('tab') == "tab_1") class="active" @endif><a href="#tab_1"
-                                                                                            data-toggle="tab"><i
-                                        class="fa fa-info-circle" aria-hidden="true"></i> Tour Info</a></li>
-                        <li @if (Request::route('tab') == "tab_2") class="active" @endif><a href="#tab_2"
-                                                                                            data-toggle="tab"><i
-                                        class="fa fa-picture-o" aria-hidden="true"></i> Images</a></li>
-                        <li @if (Request::route('tab') == "tab_3") class="active" @endif><a href="#tab_3"
-                                                                                            data-toggle="tab"><i
-                                        class="fa fa-calendar-check-o" aria-hidden="true"></i> Schedules</a></li>
-                        <li @if (Request::route('tab') == "tab_4") class="active" @endif><a href="#tab_4"
-                                                                                            data-toggle="tab"><i
-                                        class="fa fa-usd" aria-hidden="true"></i> Prices</a></li>
+                        <li @if (Request::route('tab') == "tab_1") class="active" @endif><a href="#tab_1" data-toggle="tab"><i class="fa fa-info-circle" aria-hidden="true"></i> Tour Info</a></li>
+                        <li @if (Request::route('tab') == "tab_2") class="active" @endif><a href="#tab_2" data-toggle="tab"><i class="fa fa-picture-o" aria-hidden="true"></i> Images</a></li>
+                        <li @if (Request::route('tab') == "tab_3") class="active" @endif><a href="#tab_3" data-toggle="tab"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Schedules</a></li>
+                        <li @if (Request::route('tab') == "tab_4") class="active" @endif><a href="#tab_4" data-toggle="tab"><i class="fa fa-usd" aria-hidden="true"></i> Prices</a></li>
                     </ul>
 
                     <div class="tab-content" id="tabs">
