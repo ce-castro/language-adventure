@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('vendors/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/Ionicons/css/ionicons.min.css') }}">
     @yield('css')
-    <link rel="stylesheet" href="{{ asset('css/AdminLTE.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/adminlte.css') }}">
     <link rel="stylesheet" href="{{ asset('css/skins/skin-blue.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <script src="{{ asset('vendors/jquery/jquery.min.js') }}"></script>
