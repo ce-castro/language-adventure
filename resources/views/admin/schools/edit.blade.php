@@ -393,69 +393,92 @@
                                         <label for="name" class="col-sm-2 control-label">Teacher qualifications</label>
                                         <div class="col-sm-10">
                                             What proportion of your teachers are native speakers?
+                                            <select name="native" id="native" class="form-control">
+                                                <option value="All">All</option>
+                                            </select>
                                             <br>
                                             What proportion of your teachers have a language teaching certification?
+                                            <select name="native" id="native" class="form-control">
+                                                <option value="All">All</option>
+                                            </select>
                                             <br>
                                             How many teachers have an university degree?
+                                            <select name="native" id="native" class="form-control">
+                                                <option value="All">All</option>
+                                            </select>
                                         </div>
                                     </div>
 
-                                    <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
-                                        <label for="name" class="col-sm-2 control-label">Does your school provide certificate of completation</label>
+                                    <div class="form-group @if ($errors->has('certification')) has-error @endif required col-sm-12">
+                                        <label for="certification" class="col-sm-2 control-label">Does your school provide certificate of completion</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
+                                            <div class="radio">
+                                                <input type="radio" name="certification" id="certification" value="Yes" checked>
+                                                Yes
+                                            </div>
+                                            <div class="radio">
+                                                <input type="radio" name="certification" id="certification" value="No" style="margin-left: 20px !important">
+                                                No
+                                            </div>
+                                            @if ($errors->has('certification'))
                                                 <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
                                             @endif
                                         </div>
                                     </div>
 
-                                    <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
-                                        <label for="name" class="col-sm-2 control-label">Upload a sample certificate of completion</label>
+                                    <div class="form-group @if ($errors->has('certification_sample')) has-error @endif required col-sm-12">
+                                        <label for="certification_sample" class="col-sm-2 control-label">Upload a sample certificate of completion</label>
                                         <div class="col-sm-10">
-                                            <input type="file" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="file" class="form-control" id="certification_sample" name="certification_sample">
+                                            @if ($errors->has('certification_sample'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('certification_sample')}}</span>
                                             @endif
                                         </div>
                                     </div>
 
-                                    <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
-                                        <label for="name" class="col-sm-2 control-label">Placement testing</label>
+                                    <div class="form-group @if ($errors->has('placement_type')) has-error @endif required col-sm-12">
+                                        <label for="name" class="col-sm-2 control-label">Placement testing
+                                        <span style="font-size: 10px">Check all that apply</span>
+                                        </label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <div class="checkbox icheck">
+                                                <label><input type="checkbox" value="1" name="status">  Conducted on the first day of classes</label>
+                                            </div>
+                                            <div class="checkbox icheck">
+                                                <label><input type="checkbox" value="1" name="status">  Conducted before arrival</label>
+                                            </div>
+                                            @if ($errors->has('placement_type'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('placement_type')}}</span>
                                             @endif
                                         </div>
                                     </div>
 
-                                    <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
-                                        <label for="name" class="col-sm-2 control-label">Upload a placement test</label>
+                                    <div class="form-group @if ($errors->has('placement_test')) has-error @endif required col-sm-12">
+                                        <label for="certification_sample" class="col-sm-2 control-label">Upload a sample test</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="file" class="form-control" id="placement_test" name="placement_test">
+                                            @if ($errors->has('placement_test'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('placement_test')}}</span>
                                             @endif
                                         </div>
                                     </div>
 
-                                    <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
-                                        <label for="name" class="col-sm-2 control-label">...or enter a link to your online placement test</label>
+                                    <div class="form-group @if ($errors->has('placement_link')) has-error @endif required col-sm-12">
+                                        <label for="placement_link" class="col-sm-2 control-label">...or enter a link to your online placement test</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="text" class="form-control" id="placement_link" placeholder="Placement Link" name="placement_link"  value="{{ $school->placement_link }}">
+                                            @if ($errors->has('placement_link'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('placement_link')}}</span>
                                             @endif
                                         </div>
                                     </div>
 
-                                    <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
+                                    <div class="form-group @if ($errors->has('universities_pathway')) has-error @endif required col-sm-12">
                                         <label for="name" class="col-sm-2 control-label">Enter any universities you have pathway programs with</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="text" class="form-control" id="universities_pathway" placeholder="Start typing university or location" name="universities_pathway"  value="{{ $school->universities_pathway }}">
+                                            @if ($errors->has('universities_pathway'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('universities_pathway')}}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -468,60 +491,66 @@
                                         <label for="name" class="col-sm-2 control-label">Class Size</label>
                                         <div class="col-sm-4">
                                             Maximum class size
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="number" class="form-control" id="class_max" placeholder="Maximun class size" name="class_max"  value="{{ $school->class_max }}">
+                                            @if ($errors->has('class_max'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('class_max')}}</span>
                                             @endif
                                             Average class size
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="number" class="form-control" id="class_average" placeholder="Average Size" name="class_average"  value="{{ $school->class_average }}">
+                                            @if ($errors->has('class_average'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('class_average')}}</span>
                                             @endif
                                         </div>
                                     </div>
 
-                                    <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
+                                    <div class="form-group @if ($errors->has('student_age_min')) has-error @endif required col-sm-12">
                                         <label for="name" class="col-sm-2 control-label">Student Age</label>
                                         <div class="col-sm-4">
                                             Minimum student age
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="number" class="form-control" id="student_age_min" placeholder="Minimum student age" name="student_age_min"  value="{{ $school->student_age_min }}">
+                                            @if ($errors->has('student_age_min'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('student_age_min')}}</span>
                                             @endif
                                         </div>
                                         <div class="col-sm-4">
                                             Maximum student age
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="number" class="form-control" id="student_age_max" placeholder="Maximum Student Age" name="student_age_max"  value="{{ $school->student_age_max }}">
+                                            @if ($errors->has('student_age_max'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('student_age_max')}}</span>
                                             @endif
                                         </div>
                                         <div class="col-sm-4 col-sm-offset-2" style="margin-top: 20px">
                                             Average student age
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="number" class="form-control" id="student_age_avg_summer" placeholder="Average student age" name="student_age_avg_summer"  value="{{ $school->student_age_avg }}">
+                                            @if ($errors->has('student_age_avg_summer'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('student_age_avg_summer')}}</span>
                                             @endif
                                         </div>
                                         <div class="col-sm-4" style="margin-top: 20px">
                                             Average student age (in summer)
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="text" class="form-control" id="student_age_avg_summer" placeholder="Average student age (in summer)" name="student_age_avg_summer"  value="{{ $school->student_age_avg_summer }}">
+                                            @if ($errors->has('student_age_avg_summer'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('student_age_avg_summer')}}</span>
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
-                                        <label for="name" class="col-sm-2 control-label">Studen nationality</label>
-                                        <div class="col-sm-10">
+                                    <div class="form-group @if ($errors->has('country')) has-error @endif required col-sm-12">
+                                        <label for="name" class="col-sm-2 control-label">Student nationality</label>
+                                        <div class="col-sm-4">
+                                            <select name="student_country" id="student_country" class="form-control">
+                                                <option value="">Please choose...</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="student_percentage" class="form-control" id="student_percentage" placeholder="%" name="student_percentage"  value="{{ $school->student_percentage }}">
                                         </div>
                                     </div>
-                                    <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
-                                        <label for="name" class="col-sm-2 control-label">Minutes per lesson</label>
+                                    <div class="form-group @if ($errors->has('mins_lesson')) has-error @endif required col-sm-12">
+                                        <label for="mins_lesson" class="col-sm-2 control-label">Minutes per lesson</label>
                                         <div class="col-sm-4">
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name"  value="{{ $school->name }}">
-                                            @if ($errors->has('name'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('name')}}</span>
+                                            <input type="number" class="form-control" id="mins_lesson" name="mins_lesson"  value="{{ $school->mins_lesson }}">
+                                            @if ($errors->has('mins_lesson'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('mins_lesson')}}</span>
                                             @endif
                                         </div>
                                     </div>
